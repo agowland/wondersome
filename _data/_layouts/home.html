@@ -1,0 +1,88 @@
+---
+layout: default
+---
+
+{% if site.data.menu and site.paginate and site.paginate_path and paginator.page > 1 %}
+  {% include menu.html %}
+{% elsif site.paginate and site.paginate_path and paginator.page > 1 %}
+  {% include back-link.html %}
+{% else %}
+  <header class="site-masthead">
+    {% include menu.html %}
+    {% if site.title %}
+      <h1>
+        {{ site.title }}
+      </h1>
+    {% endif %}
+    {% if site.title %}
+      <h2>
+        {{ site.description }}
+      </h2>
+    {% endif %}
+  </header>
+{% endif %}
+
+<main class="home" id="main" role="main" aria-label="Content">
+
+  <body>
+    <blockquote>
+    <p>
+        <em>
+            It’s the summer of 1988. Windsurfing’s taking America by storm, the Cold War feels like it’s winding down, Ronald Reagan’s finally out of office after two terms of hell, hip hop’s made it onto white folks’ radar, and Eddie Murphy’s just done the best movie performance he’ll ever do. The Saga Genesis has just come out, and between that and TMNT parents can’t get their kids away from the TV. Rain Man’s one of the biggest movies of the year, and might have been the biggest if Die Hard hadn’t just had its opening weekend. Oh, and Mickey Mouse just turned 60.
+        </em>
+      </p>
+    <br>
+   <p>
+    <em>
+        At Walt Disney World, celebrations for Mickey’s birthday are everywhere, and the park is enjoying another steady year of growth. It just added a new ride in its EPCOT area called Maelstrom, and although nobody knows now, the ride’s good enough to stick around for 30 years. It’s a banner year for Disney World’s biggest competitor, too. Wondersome’s sold more tickets this year than all of last, and it’s only August. Its own flagship ride, Planet of Ages, has just been totally revamped to great acclaim.
+    </em>
+   </p>
+   
+    <br>
+      
+    <p>
+        <em>
+            There’s something at Wondersome that’s not making headlines though — something only a few know about. Rides behaving dangerously, character meet-and-greets taking disturbing turns, close encounters with, well, nobody really knows… A staff member got locked in a room last week, too, which has the employee dorms buzzing because the story Gerry’s been telling sounds absurd, but this is a land where the only law is “what if?” Like what if the door without a lock did lock behind him? And what if once he was in there he was in total darkness, surrounded by thousands of pairs of eyes?
+        </em>
+    </p>
+    </blockquote>
+    </body>
+
+  {% if site.paginate and site.paginate_path %}
+    
+    <ul class="post-list">
+      {% for post in paginator.posts %}
+        {% include post-list-item.html %}
+      {% endfor %}
+    </ul>
+
+    {% if paginator.total_pages > 1 %}
+
+      <div class="post-pagination">
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl  }}" class="pagination-next btn">&lang;&nbsp;Older</a>
+        {% else %}
+          <span>&nbsp;</span>
+        {% endif %}
+        <span class="pagination-number">{{ paginator.page }} of {{ paginator.total_pages }}</span>
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="pagination-previous btn">Newer&nbsp;&rang;</a>
+        {% else %}
+          <span>&nbsp;</span>
+        {% endif %}
+      </div>
+
+    {% endif %}
+
+  {% else %}
+
+    <ul class="post-list">
+      {% for post in site.posts %}
+        {% include post-list-item.html %}
+      {% endfor %}
+    </ul>
+  
+  {% endif %}
+    
+
+</main>
