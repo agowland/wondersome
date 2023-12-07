@@ -4,7 +4,7 @@
   &:hover,
   &:focus-within {
     .post-link {
-      opacity: .6;
+      opacity: .8;
     }
   }
 }
@@ -17,6 +17,7 @@
 .post-link {
   color: $accent-color;
   display: flex;
+  font-family: Arial, Helvetica, sans-serif;
   flex-direction: column-reverse;
   text-decoration: none;
   padding: .25em;
