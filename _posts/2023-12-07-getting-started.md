@@ -3,7 +3,6 @@ layout: post
 title: "Getting Started"
 ---
 
-# Getting Started
 &nbsp;  
 
 > Please don’t circulate this workbook beyond this group; it contains information I’ve chosen to include that is only available in the purchased editions of the game books, and the producer is a small publisher.
