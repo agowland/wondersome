@@ -16,7 +16,7 @@
 title: Wondersome
 description: >- # this means to ignore newlines until "baseurl:"
   The dream of dreams.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "https://agowland.github.io/wondersome" # the subpath of your site, e.g. /blog
 url: "https://agowland.github.io/wondersome" # the base hostname & protocol for your site, e.g. http://example.com
 icon: /assets/images/haunted-house.png
 
